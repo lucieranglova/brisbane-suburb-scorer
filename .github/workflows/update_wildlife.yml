@@ -1,0 +1,36 @@
+name: Update wildlife data from ALA
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'   # every Monday at 3:00 UTC
+  workflow_dispatch:        # manual trigger
+
+jobs:
+  update-wildlife:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write       # needed to push updated wildlife.json
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch ALA data and update wildlife.json
+        run: python scripts/fetch_wildlife.py
+
+      - name: Commit updated wildlife.json if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/wildlife.json
+          git diff --staged --quiet || git commit -m "chore: update wildlife data from ALA [$(date -u +%Y-%m-%d)]"
+          git push
