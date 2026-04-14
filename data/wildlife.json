@@ -1,61 +1,56 @@
 {
   "West End": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Wallaby",           "emoji": "🦘", "chance": "low",  "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  }
+    { "name": "Kangaroo",           "emoji": "🦘", "chance": "low",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": false  }
   ],
   "Chermside": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Kangaroo",          "emoji": "🦘", "chance": "low",  "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  }
+    { "name": "Kangaroo",           "emoji": "🦘", "chance": "low",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": false  }
   ],
   "New Farm": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  }
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": false  }
   ],
   "Manly": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Jellyfish",         "emoji": "🪼", "chance": "med",  "danger": true  },
-    { "name": "Shark",             "emoji": "🦈", "chance": "low",  "danger": true  },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": false  }
   ],
   "Toowong": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Wallaby",           "emoji": "🦘", "chance": "med",  "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  },
+    { "name": "Kangaroo",           "emoji": "🦘", "chance": "med",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": false  },
     { "name": "Funnel-web spider", "emoji": "🕷",  "chance": "low",  "danger": true  }
   ],
   "Paddington": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  }
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": false  }
   ],
   "Woolloongabba": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": false  }
   ],
   "Redcliffe": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Jellyfish",         "emoji": "🪼", "chance": "med",  "danger": true  },
-    { "name": "Shark",             "emoji": "🦈", "chance": "low",  "danger": true  },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": false  }
   ],
   "Ascot": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": false  }
   ],
   "Fortitude Valley": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": false  }
   ],
   "Carindale": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Wallaby",           "emoji": "🦘", "chance": "med",  "danger": false },
-    { "name": "Kangaroo",          "emoji": "🦘", "chance": "med",  "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  },
+    { "name": "Kangaroo",           "emoji": "🦘", "chance": "med",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": false  },
     { "name": "Funnel-web spider", "emoji": "🕷",  "chance": "low",  "danger": true  }
   ],
   "South Brisbane": [
     { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
-    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  }
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": false  }
   ]
 }
