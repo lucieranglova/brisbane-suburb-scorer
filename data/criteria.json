@@ -1,0 +1,10 @@
+[
+  { "id": "rent",     "label": "Rent affordability", "color": "#1a7a5e", "default": 8 },
+  { "id": "cbd",      "label": "Proximity to CBD",   "color": "#2563a8", "default": 7 },
+  { "id": "transit",  "label": "Public transport",   "color": "#6b48c8", "default": 5 },
+  { "id": "beach",    "label": "Beach access",       "color": "#2ea882", "default": 4 },
+  { "id": "cafe",     "label": "Cafés & lifestyle",  "color": "#c97a2a", "default": 6 },
+  { "id": "safe",     "label": "Safety",             "color": "#1a7a5e", "default": 6 },
+  { "id": "wildlife", "label": "Wildlife sightings", "color": "#c4442a", "default": 5 },
+  { "id": "commute",  "label": "Commute score",      "color": "#6b48c8", "default": 7 }
+]
