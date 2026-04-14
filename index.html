@@ -534,6 +534,37 @@ function render() {
 }
 
 /* ── Map ── */
+function initMap(mapId, lat, lng, name) {
+  // Destroy existing Leaflet instance on this element if any
+  const el = document.getElementById(mapId);
+  if (!el) return;
+  if (maps[mapId]) {
+    maps[mapId].remove();
+    delete maps[mapId];
+  }
+
+  const m = L.map(mapId, { zoomControl: true, attributionControl: true }).setView([+lat, +lng], 14);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18
+  }).addTo(m);
+
+  const subIcon = L.divIcon({ className: '', html: `<div style="width:14px;height:14px;border-radius:50%;background:#1a7a5e;border:2.5px solid white;box-shadow:0 1px 5px rgba(0,0,0,.35)"></div>`, iconSize: [14, 14], iconAnchor: [7, 7] });
+  L.marker([+lat, +lng], { icon: subIcon }).addTo(m).bindPopup(`<b>${name}</b>`);
+
+  const destIcon = L.divIcon({ className: '', html: `<div style="width:12px;height:12px;border-radius:50%;background:#c4442a;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,.3)"></div>`, iconSize: [12, 12], iconAnchor: [6, 6] });
+  const bounds = [[+lat, +lng]];
+  [destinations.work, destinations.school].filter(Boolean).forEach(d => {
+    L.marker([d.lat, d.lng], { icon: destIcon }).addTo(m).bindPopup(`<b>${d.label.split(',')[0]}</b>`);
+    L.polyline([[+lat, +lng], [d.lat, d.lng]], { color: '#1a7a5e', weight: 1.5, dashArray: '5,5', opacity: .6 }).addTo(m);
+    bounds.push([d.lat, d.lng]);
+  });
+  if (bounds.length > 1) m.fitBounds(bounds, { padding: [24, 24] });
+  else m.setView([+lat, +lng], 14);
+
+  m.invalidateSize();
+  maps[mapId] = m;
+}
+
 function toggleDetail(detId, mapId, lat, lng, name) {
   const det  = document.getElementById(detId);
   const wrap = det.closest('.card-wrap');
@@ -541,26 +572,8 @@ function toggleDetail(detId, mapId, lat, lng, name) {
   det.classList.toggle('open');
   wrap.classList.toggle('is-open');
 
-  if (opening && !maps[mapId]) {
-    setTimeout(() => {
-      const m = L.map(mapId, { zoomControl: true, attributionControl: true }).setView([lat, lng], 14);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18
-      }).addTo(m);
-
-      const subIcon = L.divIcon({ className: '', html: `<div style="width:14px;height:14px;border-radius:50%;background:#1a7a5e;border:2.5px solid white;box-shadow:0 1px 5px rgba(0,0,0,.35)"></div>`, iconSize: [14, 14], iconAnchor: [7, 7] });
-      L.marker([lat, lng], { icon: subIcon }).addTo(m).bindPopup(`<b>${name}</b>`);
-
-      const destIcon = L.divIcon({ className: '', html: `<div style="width:12px;height:12px;border-radius:50%;background:#c4442a;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,.3)"></div>`, iconSize: [12, 12], iconAnchor: [6, 6] });
-      const bounds = [[lat, lng]];
-      [destinations.work, destinations.school].filter(Boolean).forEach(d => {
-        L.marker([d.lat, d.lng], { icon: destIcon }).addTo(m).bindPopup(`<b>${d.label.split(',')[0]}</b>`);
-        L.polyline([[lat, lng], [d.lat, d.lng]], { color: '#1a7a5e', weight: 1.5, dashArray: '5,5', opacity: .6 }).addTo(m);
-        bounds.push([d.lat, d.lng]);
-      });
-      if (bounds.length > 1) m.fitBounds(bounds, { padding: [24, 24] });
-      maps[mapId] = m;
-    }, 50);
+  if (opening) {
+    setTimeout(() => initMap(mapId, lat, lng, name), 50);
   }
 }
 
