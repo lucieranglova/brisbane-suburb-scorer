@@ -1,0 +1,93 @@
+{
+  "West End": [
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Flying fox",        "emoji": "🦇", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  },
+    { "name": "Wallaby",           "emoji": "🦘", "chance": "low",  "danger": false }
+  ],
+  "Chermside": [
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  },
+    { "name": "Kangaroo",          "emoji": "🦘", "chance": "low",  "danger": false }
+  ],
+  "New Farm": [
+    { "name": "Flying fox",        "emoji": "🦇", "chance": "high", "danger": false },
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Pelican",           "emoji": "🐦", "chance": "med",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  }
+  ],
+  "Manly": [
+    { "name": "Pelican",           "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Jellyfish",         "emoji": "🪼", "chance": "med",  "danger": true  },
+    { "name": "Shark",             "emoji": "🦈", "chance": "low",  "danger": true  },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+  ],
+  "Toowong": [
+    { "name": "Flying fox",        "emoji": "🦇", "chance": "high", "danger": false },
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Wallaby",           "emoji": "🦘", "chance": "med",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  },
+    { "name": "Funnel-web spider", "emoji": "🕷",  "chance": "low",  "danger": true  }
+  ],
+  "Paddington": [
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Flying fox",        "emoji": "🦇", "chance": "med",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  }
+  ],
+  "Woolloongabba": [
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Flying fox",        "emoji": "🦇", "chance": "med",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+  ],
+  "Redcliffe": [
+    { "name": "Pelican",           "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Jellyfish",         "emoji": "🪼", "chance": "med",  "danger": true  },
+    { "name": "Shark",             "emoji": "🦈", "chance": "low",  "danger": true  },
+    { "name": "Sea lion",          "emoji": "🦭", "chance": "low",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+  ],
+  "Ascot": [
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Flying fox",        "emoji": "🦇", "chance": "med",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+  ],
+  "Fortitude Valley": [
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Flying fox",        "emoji": "🦇", "chance": "med",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "low",  "danger": true  }
+  ],
+  "Carindale": [
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Wallaby",           "emoji": "🦘", "chance": "med",  "danger": false },
+    { "name": "Kangaroo",          "emoji": "🦘", "chance": "med",  "danger": false },
+    { "name": "Wombat",            "emoji": "🦡", "chance": "low",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  },
+    { "name": "Funnel-web spider", "emoji": "🕷",  "chance": "low",  "danger": true  }
+  ],
+  "South Brisbane": [
+    { "name": "Flying fox",        "emoji": "🦇", "chance": "high", "danger": false },
+    { "name": "Cockatoo",          "emoji": "🦜", "chance": "high", "danger": false },
+    { "name": "Magpie",            "emoji": "🐦", "chance": "high", "danger": false },
+    { "name": "Pelican",           "emoji": "🐦", "chance": "med",  "danger": false },
+    { "name": "Huntsman spider",   "emoji": "🕷",  "chance": "med",  "danger": true  }
+  ],
+  "_not_in_brisbane": [
+    { "name": "Koala",           "emoji": "🐨", "note": "Found further south (Gold Coast hinterland, Sunshine Coast) — not typical in Brisbane suburbs." },
+    { "name": "Emu",             "emoji": "🦤", "note": "Inland/rural QLD — not found in Brisbane suburbs." },
+    { "name": "Saltwater croc", "emoji": "🐊", "note": "Far north QLD (Cairns, Daintree) — Brisbane is safely outside their range." },
+    { "name": "Wombat",         "emoji": "🦡", "note": "Very rare in greater Brisbane; possible only in outer western bushland." }
+  ]
+}
