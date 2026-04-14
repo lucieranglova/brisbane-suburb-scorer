@@ -8,6 +8,7 @@
 <meta property="og:title" content="Brisbane Suburb Scorer">
 <meta property="og:description" content="Find your perfect Brisbane neighbourhood.">
 <meta property="og:image" content="assets/og-image.png">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -150,6 +151,13 @@ input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.25);}
 .not-expected-title{font-size:11px;color:var(--hint);margin-bottom:6px;letter-spacing:.04em;}
 .not-expected-item{display:flex;align-items:flex-start;gap:6px;font-size:11px;color:var(--hint);margin-bottom:4px;line-height:1.5;}
 .not-expected-item .emoji{font-size:13px;flex-shrink:0;}
+
+.places-section{border-top:1px solid var(--border);padding:.9rem 1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.places-col-title{font-size:11px;color:var(--hint);letter-spacing:.04em;margin-bottom:7px;}
+.place-link{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text);text-decoration:none;padding:4px 0;border-bottom:0.5px solid var(--border);transition:color .15s;}
+.place-link:last-child{border-bottom:none;}
+.place-link:hover{color:var(--green);}
+.place-link svg{flex-shrink:0;color:var(--hint);}
 
 .leaflet-container{font-family:'DM Sans',sans-serif;}
 .leaflet-control-attribution{font-size:9px!important;}
@@ -390,8 +398,8 @@ function commuteScore(s) {
 
 function commuteDistances(s) {
   return [
-    destinations.work   ? { label: destinations.work.label.split(',')[0],   km: haversineKm(s.lat, s.lng, destinations.work.lat, destinations.work.lng) }   : null,
-    destinations.school ? { label: destinations.school.label.split(',')[0], km: haversineKm(s.lat, s.lng, destinations.school.lat, destinations.school.lng) } : null,
+    destinations.work   ? { label: 'to work',   km: haversineKm(s.lat, s.lng, destinations.work.lat, destinations.work.lng) }   : null,
+    destinations.school ? { label: 'to school',  km: haversineKm(s.lat, s.lng, destinations.school.lat, destinations.school.lng) } : null,
   ].filter(Boolean);
 }
 
@@ -469,7 +477,29 @@ function render() {
     const commuteHtml = dists.length ? `
       <div class="detail-section">
         <div class="detail-section-title">Distance to your destinations</div>
-        ${dists.map(d => `<div class="commute-pill"><strong>${d.km.toFixed(1)} km</strong> to ${d.label}</div>`).join('')}
+        ${dists.map(d => `<div class="commute-pill"><strong>${d.km.toFixed(1)} km</strong> ${d.label}</div>`).join('')}
+      </div>` : '';
+
+    const extLink = `<svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5.5 2h2.5v2.5M8 2L3 7M3.5 2H2a1 1 0 00-1 1v5a1 1 0 001 1h5a1 1 0 001-1V6.5"/></svg>`;
+
+    const placesHtml = (s.places || []).map(p =>
+      `<a class="place-link" href="${p.maps}" target="_blank">${extLink}${p.name}</a>`
+    ).join('');
+
+    const beachesHtml = (s.beaches || []).map(b =>
+      `<a class="place-link" href="${b.maps}" target="_blank">${extLink}${b.name}</a>`
+    ).join('');
+
+    const placesSection = (s.places?.length || s.beaches?.length) ? `
+      <div class="places-section">
+        <div>
+          <div class="places-col-title">PLACES TO EXPLORE</div>
+          ${placesHtml}
+        </div>
+        <div>
+          <div class="places-col-title">NEARBY BEACHES</div>
+          ${beachesHtml}
+        </div>
       </div>` : '';
 
     const wrap = document.createElement('div');
@@ -515,10 +545,7 @@ function render() {
           </div>
           <div style="display:flex;gap:7px;flex-wrap:wrap;">${wlHtml}</div>
         </div>
-        <div class="not-expected">
-          <div class="not-expected-title">NOT EXPECTED IN BRISBANE SUBURBS</div>
-          ${notExpected}
-        </div>
+        ${placesSection}
       </div>
     `;
     container.appendChild(wrap);
@@ -535,7 +562,6 @@ function render() {
 
 /* ── Map ── */
 function initMap(mapId, lat, lng, name) {
-  // Destroy existing Leaflet instance on this element if any
   const el = document.getElementById(mapId);
   if (!el) return;
   if (maps[mapId]) {
@@ -543,7 +569,8 @@ function initMap(mapId, lat, lng, name) {
     delete maps[mapId];
   }
 
-  const m = L.map(mapId, { zoomControl: true, attributionControl: true }).setView([+lat, +lng], 14);
+  // Start centered on suburb — fitBounds runs after invalidateSize
+  const m = L.map(mapId, { zoomControl: true, attributionControl: true }).setView([+lat, +lng], 13);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18
   }).addTo(m);
@@ -558,11 +585,14 @@ function initMap(mapId, lat, lng, name) {
     L.polyline([[+lat, +lng], [d.lat, d.lng]], { color: '#1a7a5e', weight: 1.5, dashArray: '5,5', opacity: .6 }).addTo(m);
     bounds.push([d.lat, d.lng]);
   });
-  if (bounds.length > 1) m.fitBounds(bounds, { padding: [24, 24] });
-  else m.setView([+lat, +lng], 14);
 
-  m.invalidateSize();
   maps[mapId] = m;
+
+  // Wait for element to be fully painted, then fix size and fit
+  setTimeout(() => {
+    m.invalidateSize();
+    if (bounds.length > 1) m.fitBounds(bounds, { padding: [30, 30], maxZoom: 13 });
+  }, 150);
 }
 
 function toggleDetail(detId, mapId, lat, lng, name) {
