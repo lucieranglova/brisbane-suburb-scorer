@@ -1,0 +1,110 @@
+[
+  {
+    "name": "West End",
+    "lat": -27.482,
+    "lng": 153.0045,
+    "tags": [["Vibrant", "tg"], ["Transit", "tb"], ["Cafés", "tg"]],
+    "scores": { "rent": 5, "cbd": 8, "transit": 9, "beach": 2, "cafe": 10, "safe": 7, "wildlife": 6 },
+    "info": { "avgRent": "$580/wk", "cbdMin": "10 min", "beachKm": "18 km" },
+    "url": "https://www.domain.com.au/rent/west-end-qld-4101/"
+  },
+  {
+    "name": "Chermside",
+    "lat": -27.3876,
+    "lng": 153.0324,
+    "tags": [["Affordable", "tg"], ["Transit", "tb"]],
+    "scores": { "rent": 8, "cbd": 6, "transit": 8, "beach": 1, "cafe": 6, "safe": 8, "wildlife": 4 },
+    "info": { "avgRent": "$470/wk", "cbdMin": "20 min", "beachKm": "25 km" },
+    "url": "https://www.domain.com.au/rent/chermside-qld-4032/"
+  },
+  {
+    "name": "New Farm",
+    "lat": -27.47,
+    "lng": 153.0467,
+    "tags": [["Premium", "ta"], ["Cafés", "tg"], ["River", "tb"]],
+    "scores": { "rent": 3, "cbd": 9, "transit": 7, "beach": 3, "cafe": 9, "safe": 9, "wildlife": 7 },
+    "info": { "avgRent": "$720/wk", "cbdMin": "8 min", "beachKm": "15 km" },
+    "url": "https://www.domain.com.au/rent/new-farm-qld-4005/"
+  },
+  {
+    "name": "Manly",
+    "lat": -27.4578,
+    "lng": 153.1764,
+    "tags": [["Beach", "tb"], ["Wildlife", "tc"], ["Quiet", "tn"]],
+    "scores": { "rent": 6, "cbd": 4, "transit": 5, "beach": 10, "cafe": 5, "safe": 9, "wildlife": 8 },
+    "info": { "avgRent": "$540/wk", "cbdMin": "35 min", "beachKm": "0.5 km" },
+    "url": "https://www.domain.com.au/rent/manly-qld-4179/"
+  },
+  {
+    "name": "Toowong",
+    "lat": -27.4852,
+    "lng": 152.9824,
+    "tags": [["Affordable", "tg"], ["Uni area", "tb"]],
+    "scores": { "rent": 7, "cbd": 7, "transit": 8, "beach": 1, "cafe": 7, "safe": 8, "wildlife": 7 },
+    "info": { "avgRent": "$490/wk", "cbdMin": "12 min", "beachKm": "20 km" },
+    "url": "https://www.domain.com.au/rent/toowong-qld-4066/"
+  },
+  {
+    "name": "Paddington",
+    "lat": -27.4621,
+    "lng": 152.9892,
+    "tags": [["Cafés", "tg"], ["Character", "ta"]],
+    "scores": { "rent": 4, "cbd": 7, "transit": 6, "beach": 1, "cafe": 9, "safe": 8, "wildlife": 5 },
+    "info": { "avgRent": "$650/wk", "cbdMin": "14 min", "beachKm": "18 km" },
+    "url": "https://www.domain.com.au/rent/paddington-qld-4064/"
+  },
+  {
+    "name": "Woolloongabba",
+    "lat": -27.4928,
+    "lng": 153.034,
+    "tags": [["Up & coming", "ta"], ["Transit", "tb"]],
+    "scores": { "rent": 6, "cbd": 8, "transit": 8, "beach": 2, "cafe": 7, "safe": 7, "wildlife": 4 },
+    "info": { "avgRent": "$510/wk", "cbdMin": "9 min", "beachKm": "17 km" },
+    "url": "https://www.domain.com.au/rent/woolloongabba-qld-4102/"
+  },
+  {
+    "name": "Redcliffe",
+    "lat": -27.2298,
+    "lng": 153.102,
+    "tags": [["Beach", "tb"], ["Wildlife", "tc"], ["Affordable", "tg"]],
+    "scores": { "rent": 8, "cbd": 2, "transit": 4, "beach": 9, "cafe": 4, "safe": 8, "wildlife": 9 },
+    "info": { "avgRent": "$430/wk", "cbdMin": "50 min", "beachKm": "0.3 km" },
+    "url": "https://www.domain.com.au/rent/redcliffe-qld-4020/"
+  },
+  {
+    "name": "Ascot",
+    "lat": -27.4288,
+    "lng": 153.06,
+    "tags": [["Premium", "ta"], ["Quiet", "tn"]],
+    "scores": { "rent": 2, "cbd": 5, "transit": 5, "beach": 4, "cafe": 6, "safe": 10, "wildlife": 4 },
+    "info": { "avgRent": "$850/wk", "cbdMin": "18 min", "beachKm": "16 km" },
+    "url": "https://www.domain.com.au/rent/ascot-qld-4007/"
+  },
+  {
+    "name": "Fortitude Valley",
+    "lat": -27.4572,
+    "lng": 153.0364,
+    "tags": [["Nightlife", "ta"], ["Transit", "tb"], ["Vibrant", "tg"]],
+    "scores": { "rent": 5, "cbd": 9, "transit": 9, "beach": 2, "cafe": 8, "safe": 6, "wildlife": 4 },
+    "info": { "avgRent": "$550/wk", "cbdMin": "5 min", "beachKm": "16 km" },
+    "url": "https://www.domain.com.au/rent/fortitude-valley-qld-4006/"
+  },
+  {
+    "name": "Carindale",
+    "lat": -27.503,
+    "lng": 153.096,
+    "tags": [["Suburban", "tn"], ["Wildlife", "tc"], ["Affordable", "tg"]],
+    "scores": { "rent": 7, "cbd": 3, "transit": 4, "beach": 2, "cafe": 4, "safe": 9, "wildlife": 8 },
+    "info": { "avgRent": "$500/wk", "cbdMin": "30 min", "beachKm": "25 km" },
+    "url": "https://www.domain.com.au/rent/carindale-qld-4152/"
+  },
+  {
+    "name": "South Brisbane",
+    "lat": -27.4758,
+    "lng": 153.0187,
+    "tags": [["Riverside", "tb"], ["Arts", "tg"], ["Transit", "tb"]],
+    "scores": { "rent": 4, "cbd": 9, "transit": 8, "beach": 2, "cafe": 8, "safe": 8, "wildlife": 7 },
+    "info": { "avgRent": "$630/wk", "cbdMin": "6 min", "beachKm": "16 km" },
+    "url": "https://www.domain.com.au/rent/south-brisbane-qld-4101/"
+  }
+]
